@@ -13,7 +13,7 @@ function LoginPage() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/home");
+    navigate("/dashboard");
 
    
 

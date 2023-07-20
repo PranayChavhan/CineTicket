@@ -8,6 +8,7 @@ import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 import MovieHero from "../components/MovieHero/MovieHero.Component";
 import Cast from "../components/Cast/Cast.Component";
+import Navbarr from "../components/Navbar/Navbar.Component";
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -121,6 +122,7 @@ const MoviePage = () => {
 
   return (
     <>
+    <Navbarr/>
       <MovieHero />
       <div className="my-12 container px-4 lg-ml-20 lg:w-2/3">
         <div className="flex flex-col items-start gap-3">
@@ -216,4 +218,4 @@ const MoviePage = () => {
   );
 };
 
-export default MovieLayoutHoc(MoviePage);
+export default MoviePage;

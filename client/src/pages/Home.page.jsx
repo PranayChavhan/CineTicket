@@ -6,6 +6,7 @@ import HeroCarousel from "../components/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 // Layout HOC
 import DefaultLayoutHoc from "../layout/Default.layout";
+import Navbarr from "../components/Navbar/Navbar.Component";
 
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
@@ -41,6 +42,7 @@ const HomePage = () => {
 
   return (
     <>
+    <Navbarr/>
       <HeroCarousel />
 
       <div className="container mx-auto px-4 md:px-12 my-8">
@@ -91,4 +93,4 @@ const HomePage = () => {
   );
 };
 
-export default DefaultLayoutHoc(HomePage);
+export default HomePage;
