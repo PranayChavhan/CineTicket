@@ -15,8 +15,6 @@ function LoginPage() {
   const handleClick = () => {
     navigate("/dashboard");
 
-   
-
   };
 
   return (

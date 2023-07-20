@@ -445,7 +445,7 @@ const HeroCarousel = () => {
                     color="white"
                     className=" opacity-80 mb-4"
                   >
-                    {images.overview}
+                    {images.overview.substring(0,300)}
                   </Typography>
 
                   <Typography
@@ -460,7 +460,7 @@ const HeroCarousel = () => {
                       Explore
                     </Button>
                     <Button size="lg" color="white" variant="text">
-                      Gallery
+                      Buy/Rent
                     </Button>
                   </div>
                 </div>

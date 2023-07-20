@@ -389,7 +389,7 @@ const Navbarr = () => {
         
       </div>
     </nav>
-    <div className="bg-darkBackground-800 ">
+    <div className="bg-darkBackground-800 hidden md:block">
     <NavLink/>
     </div>
     
