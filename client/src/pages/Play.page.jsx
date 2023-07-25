@@ -1,5 +1,5 @@
 import React from "react";
-import DefaultLayoutHoc from "../layout/Default.layout";
+// import DefaultLayoutHoc from "../layout/Default.layout";
 
 //Components
 import Poster from "../components/Poster/Poster.Component";
@@ -96,4 +96,4 @@ const PlayPage = () => {
   );
 };
 
-export default DefaultLayoutHoc(PlayPage);
+export default PlayPage;

@@ -5,7 +5,7 @@ import EntertainmentCardSlider from "../components/Entertainment/EntertainmentCa
 import HeroCarousel from "../components/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 // Layout HOC
-import DefaultLayoutHoc from "../layout/Default.layout";
+// import DefaultLayoutHoc from "../layout/Default.layout";  
 import Navbarr from "../components/Navbar/Navbar.Component";
 
 const HomePage = () => {
