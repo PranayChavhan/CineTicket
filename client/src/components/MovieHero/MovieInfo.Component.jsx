@@ -1,8 +1,17 @@
 import React, { useContext } from "react";
 import PaymentModel from "../PaymentModal/Payment.Component";
 import { MovieContext } from "../../context/Movie.context";
+import { useNavigate } from "react-router-dom";
+
 
 const MovieInfo = ({ movie }) => {
+  const navigate = useNavigate();
+
+  const bookTicket = () => {
+    // Here, you can pass the movie props to the "ticketbook" page using state
+    navigate("/ticketbook", { state: { movie } });
+  };
+
   const { price, setIsOpen, isOpen, rentMovie, buyMovie } =
     useContext(MovieContext);
   const genres = movie.genres?.map(({ name }) => name).join(", ");
@@ -34,6 +43,13 @@ const MovieInfo = ({ movie }) => {
           >
             Buy ₹599
           </button>
+
+          <button
+              onClick={bookTicket}
+              className="bg-red-600 w-full py-3 text-white font-semibold rounded-lg"
+            >
+              Book Ticket
+            </button>
         </div>
       </div>
     </>
