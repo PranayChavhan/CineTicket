@@ -16,25 +16,28 @@ const HomePage = () => {
   useEffect(() => {
     const requestPopularMovies = async () => {
       const getPopularMovies = await axios.get("/movie/popular");
-      setRecommendedMovies(getPopularMovies.data.results);
+      setRecommendedMovies(getPopularMovies.data[0].results);
     };
-
+    console.log('====================================');
+    console.log(recommendedMovies);
+    console.log('====================================');
     requestPopularMovies();
   }, []);
 
   useEffect(() => {
     const requestTopRatedMovies = async () => {
       const getTopRatedMovies = await axios.get("/movie/top_rated");
-      setPremierMovies(getTopRatedMovies.data.results);
+      setPremierMovies(getTopRatedMovies.data[0].results);
     };
 
+    
     requestTopRatedMovies();
   }, []);
 
   useEffect(() => {
     const requestUpcomingMovies = async () => {
       const getUpcomingMovies = await axios.get("/movie/upcoming");
-      setOnlineStreamEvents(getUpcomingMovies.data.results);
+      setOnlineStreamEvents(getUpcomingMovies.data[0].results);
     };
 
     requestUpcomingMovies();

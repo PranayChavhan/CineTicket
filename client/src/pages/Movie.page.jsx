@@ -19,17 +19,21 @@ const MoviePage = () => {
 
   useEffect(() => {
     const requestCast = async () => {
-      const getCast = await axios.get(`/movie/${id}/credits`);
-      setCast(getCast.data.cast);
+      const getCast = await axios.get(`/cast`);
+      setCast(getCast.data[0].cast);
     };
+
+    console.log('aaaa====================================');
+    console.log(cast);
+    console.log('====================================');
 
     requestCast();
   }, [id]);
 
   useEffect(() => {
     const requestSimilarMovies = async () => {
-      const getSimilarMovies = await axios.get(`/movie/${id}/similar`);
-      setSimilarMovies(getSimilarMovies.data.results);
+      const getSimilarMovies = await axios.get(`/movie/popular`);
+      setSimilarMovies(getSimilarMovies.data[0].results);
     };
 
     requestSimilarMovies();
@@ -38,9 +42,9 @@ const MoviePage = () => {
   useEffect(() => {
     const requestRecommendedMovies = async () => {
       const getRecommendedMovies = await axios.get(
-        `/movie/${id}/recommendations`
+        `/movie/popular`
       );
-      setRecommendedMovies(getRecommendedMovies.data.results);
+      setRecommendedMovies(getRecommendedMovies.data[0].results);
     };
 
     requestRecommendedMovies();
@@ -206,13 +210,6 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* recommended movies slider */}
-        <PosterSlider
-          config={settings}
-          title="BMS XCLUSICE"
-          posters={recommendedMovies}
-          isDark={false}
-        />
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 // Define the schema
-const flashSchema = new mongoose.Schema({
+const upcomingSchema = new mongoose.Schema({
   adult: { type: Boolean, required: true },
   backdrop_path: { type: String, required: true },
   genre_ids: { type: [Number], required: true },
@@ -19,7 +19,7 @@ const flashSchema = new mongoose.Schema({
 });
 
 // Create the Flash model for the "popular_movies" collection
-const Flash = mongoose.model('Flash', flashSchema, 'popular_movies');
+const Upcoming = mongoose.model('Upcoming', upcomingSchema, 'upcoming_movies');
 
-export default Flash;
+export default Upcoming;
 
