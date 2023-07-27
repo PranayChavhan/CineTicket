@@ -13,7 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import TicketBook from "./pages/Ticket.page";
 import BookTicket from "./pages/Book.ticket";
 
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://cine-ticket2.vercel.app";
 // axios.defaults.params = {};
 // axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY;
 

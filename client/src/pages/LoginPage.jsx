@@ -18,7 +18,7 @@ function LoginPage() {
   };
 
   return (
-    <div className="grid grid-cols-7">
+    <div className="md:grid md:grid-cols-7">
       <div className="col-start-1 col-end-5 min-h-screen flex items-center justify-center">
         <Card color="transparent" shadow={false}>
           <Typography variant="h4" color="blue-gray">
@@ -59,8 +59,8 @@ function LoginPage() {
             </svg>
             Sign up with Google
           </Button>
-          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-            <div className="mb-4 flex flex-col gap-6">
+          <form className="mt-8 mb-2 w-80 max-w-screen-lg">
+            <div className="mb-4 flex flex-col gap-6 items-center">
               <Input size="lg" label="Name" />
               <Input size="lg" label="Email" />
               <Input type="password" size="lg" label="Password" />
@@ -98,8 +98,8 @@ function LoginPage() {
           </form>
         </Card>
       </div>
-      <div className="col-start-5 col-end-8 bg-[#f6feff] flex items-center justify-center">
-        There should be an image
+      <div className="col-start-5 col-end-8  flex items-center justify-center">
+    
         
       </div>
     </div>
