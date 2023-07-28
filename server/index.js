@@ -102,6 +102,25 @@ app.get('/cast', async (req, res) => {
   }
 });
 
+app.get('/cast/:id', (req, res) => {
+  const id = req.params.id;
+  const movie = Credits.find((movie) => movie.id === parseInt(id));
+
+  if (!movie) {
+    return res.status(404).json({ error: 'Movie not found' });
+  }
+
+  const movieId = movie.id;
+  const movieCredits = Credits.find((credit) => credit.movieId === movieId);
+
+  if (!movieCredits) {
+    return res.status(404).json({ error: 'Credits not found for this movie' });
+  }
+
+  res.json({ movie, credits: movieCredits.cast });
+});
+
+
 
 app.get('/movie/:id', async (req, res) => {
   const movieId = parseInt(req.params.id);
@@ -137,32 +156,29 @@ app.get('/movie/:id', async (req, res) => {
 
 
 
-app.get('/movie/:id/credits', async (req, res) => {
-  const movieId = req.params.id;
+app.get('/castttt/:id', async (req, res) => {
+  const movieId = parseInt(req.params.id);
 
   try {
-    // Find the movie in the "popular_movies" collection by its ID
-    const movie = await Flash.findOne({ id: movieId });
+    // Use the aggregation framework to find the movie by its ID in the nested "results" array
+    const movie = await Credits.aggregate([
+      {
+        $match: { 'id': movieId }, // Find the movie by its ID
+      },
+    ]);
 
-    if (!movie) {
+    if (movie.length === 0) {
       return res.status(404).json({ message: 'Movie not found.' });
     }
 
-    // Assuming the credits data is available within the movie object (e.g., movie.credits)
-    const credits = movie.credits;
-
-    if (!credits) {
-      return res.status(404).json({ message: 'Credits not found for this movie.' });
-    }
-
-    // If credits are found, return them as a response
-    res.json(credits);
+    // If the movie is found, return its details as a response
+    res.json(movie[0].results);
   } catch (err) {
     // Handle any errors that occur during the database query or processing
     console.error(err);
 
-    // Send a generic error response without exposing sensitive information
-    res.status(500).json({ message: 'Server error occurred.' });
+    // Send a more detailed error response with the actual error message
+    res.status(500).json({ message: 'Server error occurred.', error: err.message });
   }
 });
 

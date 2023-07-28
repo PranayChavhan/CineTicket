@@ -13,15 +13,15 @@ import LoginPage from "./pages/LoginPage";
 import TicketBook from "./pages/Ticket.page";
 import BookTicket from "./pages/Book.ticket";
 
-axios.defaults.baseURL = "https://cine-ticket2.vercel.app";
+axios.defaults.baseURL = "http://localhost:8080";
 // axios.defaults.params = {};
 // axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY;
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LoginPage/>} />
-      <Route path="/dashboard" element={<HomePage />} />
+    <Routes >
+      <Route path="/login" element={<LoginPage/>} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/movie/:id" element={<MoviePage />} />
       <Route path="/plays" element={<PlayPage />} />
       <Route path="/ticketbook" element={<TicketBook/>} />

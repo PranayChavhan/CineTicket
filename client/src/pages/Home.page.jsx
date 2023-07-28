@@ -7,6 +7,7 @@ import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 // Layout HOC
 // import DefaultLayoutHoc from "../layout/Default.layout";  
 import Navbarr from "../components/Navbar/Navbar.Component";
+import Footer from "../components/Footer/Footer.Component";
 
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
@@ -92,6 +93,8 @@ const HomePage = () => {
           isDark={false}
         />
       </div>
+
+      <Footer/>
     </>
   );
 };
