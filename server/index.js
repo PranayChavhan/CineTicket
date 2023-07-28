@@ -11,6 +11,11 @@ import Credits from './mongodb/models/casts.js';
 // import postRoutes from './routes/postRoutes.js';
 // import dalleRoutes from './routes/dalleRoutes.js';
 
+// MONGODB_URL="mongodb+srv://chavhanpranay:7774860123@cluster0.mt1t8k5.mongodb.net/?retryWrites=true&w=majority"
+
+
+
+
 dotenv.config();
 
 const app = express();
