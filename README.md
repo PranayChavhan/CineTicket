@@ -49,6 +49,11 @@ To run the CineTicket application, follow these steps:
    - Navigate to the client directory: `cd client`
    - Start the client development server: `npm run dev`
 
+#### OR Run with Docker
+```sh
+docker compose up
+```
+
 Now you should have the server and client running concurrently, enabling you to explore CineTicket through your preferred web browser.
 
 ## 🤝 Contributing
